@@ -41,7 +41,6 @@ dependencies = [
     "huggingface-hub",
     "loguru",
     "langcodes[data]",
-    "gradio>=6.17,<7",
     "einops",
     "librosa>=0.11.0",
     "soundfile>=0.13.1",
@@ -52,10 +51,12 @@ dependencies = [
     "torchdiffeq",
     "tqdm",
     "lingua-language-detector",
-    "WeTextProcessing",
 ]
 
 [project.optional-dependencies]
+playground = [
+    "gradio>=6.17,<7",
+]
 edit_playground_asr = [
     "qwen-asr==0.0.6",
 ]

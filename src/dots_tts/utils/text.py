@@ -6,8 +6,6 @@ from typing import Literal
 
 from langcodes import Language as LangcodesLanguage
 from lingua import Language, LanguageDetectorBuilder
-from tn.chinese.normalizer import Normalizer as ZhNormalizer
-from tn.english.normalizer import Normalizer as EnNormalizer
 
 TextLanguage = Literal["zh", "en", "unknown"]
 
@@ -15,13 +13,17 @@ _WHITESPACE_PATTERN = re.compile(r"\s+")
 
 
 @lru_cache(maxsize=1)
-def get_chinese_text_normalizer() -> ZhNormalizer:
-    return ZhNormalizer()
+def get_chinese_text_normalizer():
+    from tn.chinese.normalizer import Normalizer
+
+    return Normalizer()
 
 
 @lru_cache(maxsize=1)
-def get_english_text_normalizer() -> EnNormalizer:
-    return EnNormalizer()
+def get_english_text_normalizer():
+    from tn.english.normalizer import Normalizer
+
+    return Normalizer()
 
 
 @lru_cache(maxsize=1)
