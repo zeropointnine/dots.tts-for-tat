@@ -1,3 +1,13 @@
+> **⚠️ Fork notice — this is `dots.tts-for-tat`, a fork of [studio-dots-ai/dots.tts](https://github.com/studio-dots-ai/dots.tts).**
+>
+> This repository tracks upstream `dots.tts` one-for-one, with a single deliberate change: **the Gradio playground and text normalization are optional**, so `dots.tts` can be installed as a lightweight library dependency (headless / server-side TTS, or embedded inside a larger app) without pulling in a web-UI stack or the WeTextProcessing runtime.
+>
+> - `pip install dots.tts` → core TTS runtime only.
+> - `pip install 'dots.tts[playground]'` → restores the Gradio web demo.
+> - Text normalization (`--normalize-text`) is now a lazy import; install `WeTextProcessing` yourself if you need it.
+>
+> Checkpoints, models, APIs, and reported performance are otherwise identical to upstream. Original project and authors: [studio-dots-ai/dots.tts](https://github.com/studio-dots-ai/dots.tts) (Apache-2.0); please credit upstream as described in [Citation](#-citation).
+
 <p align="center">
   <img src="assets/logo.png" alt="dots.tts" width="280">
 </p>
